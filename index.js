@@ -197,14 +197,26 @@
 //     console.log(`server is running on ${port}`)
 // })
 
-const http= require('http');
-let port=8080;
-http.createServer((req,res)=>{
-    console.log("Rohit singh")
-    res.write("hello");
-    res.write("hi");
-    res.end();
-})
-.listen(port,()=>{
-    console.log(`runnig the server ${port}`);
-});
+// const http= require('http');
+// let port=8080;
+// http.createServer((req,res)=>{
+//     console.log("Rohit singh")
+//     res.write("hello");
+//     res.write("hi");
+//     res.end();
+// })
+// .listen(port,()=>{
+//     console.log(`runnig the server ${port}`);
+// });
+
+// const http=require('http');
+// let port =3000;
+// http.createServer((req,res)=>{
+//     console.log("rohit");
+//       res.write("hello");
+//       res.write("good morning");
+//       res.end();
+// })
+// .listen(port,()=>{
+//     console.log(`running the swerver ${port}`);
+// });
