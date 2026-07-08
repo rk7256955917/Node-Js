@@ -220,3 +220,23 @@
 // .listen(port,()=>{
 //     console.log(`running the swerver ${port}`);
 // });
+
+// const http= require('http');
+// let port=8080;
+// http.createServer((req,res)=>{
+//     if(req.url==='/'){
+//         res.end("home page")
+//     }
+//    else if(req.url==='/about'){
+//         res.end("about page")
+//     }
+//     else{
+//         res.end("404 page not found")
+//     }
+//     console.log("rohit");
+   
+// })
+// .listen(port,()=>{
+//     console.log(`running the server ${port}`)
+// });
+console.log('hello')
