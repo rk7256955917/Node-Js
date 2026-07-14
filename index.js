@@ -1,3 +1,5 @@
+
+
 // function hello(){
 //     console.log("hello world");
 // }
@@ -239,4 +241,37 @@
 // .listen(port,()=>{
 //     console.log(`running the server ${port}`)
 // });
-console.log('hello')
+// console.log('hello')
+
+const express = require('express');
+const connected=require ("./config/db.js")
+const User=require("./model/schema.js")
+const app = express();
+ 
+ connected();
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+
+app.get("/", function(req,res){
+    res.send("hello rohit");
+});
+app.post("/users", async (req, res) => {
+  try {
+    const data=req.body;
+    console.log(data);
+    const user = await User.create(req.body);
+
+    res.status(201).json({
+      message: "User created successfully",
+      data: user,
+    });
+  } catch (err) {
+    res.status(400).json({
+      message: err.message,
+    });
+  }
+});
+app.listen(3000,function(){
+    console.log("its running");
+})
