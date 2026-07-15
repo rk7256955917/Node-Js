@@ -243,6 +243,52 @@
 // });
 // console.log('hello')
 
+// const http = require("http");
+// const fs = require("fs");
+
+// const myServer = http.createServer((req, res) => {
+
+//     const log = `${Date.now()}: New Request Received\n`;
+
+//     console.log(log);
+
+//     fs.appendFile("test.txt", log, (err) => {
+//         if (err) {
+//             console.log(err);
+//             res.end("Error writing log");
+//             return;
+//         }
+
+//         res.end("Hello from server again");
+//     });
+
+// });
+
+// myServer.listen(8000, () => {
+//     console.log("Server is started");
+// });
+
+// const http= require("http")
+// let port= 8080;
+// http.createServer((req,res)=>{
+//   if(req.url==="/"){
+//     res.end("home page");
+//   }
+//   else if(req.url==="/about"){
+//     res.end("about page");
+//   }
+//   else if(req.url==="/contact"){
+//     res.end("contact page");
+//   }
+//   else{
+//     res.statusCode=404;
+//     res.end("page not found");
+//   }
+// })
+// .listen(port,()=>{
+//   console.log(`server is running on port ${port}`)
+// });
+
 const express = require('express');
 const connected=require ("./config/db.js")
 const User=require("./model/schema.js")
