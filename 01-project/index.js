@@ -3,11 +3,22 @@ const fs =require("fs");
 const users = require("./MOCK_DATA.json");
 
 
+
 const app = express();
 const PORT = 8000;
 
 // Middleware - Plugin
+
 app.use(express.urlencoded({extended:false}));
+
+app.use((req,res,next)=>{
+    fs.appendFile(
+        "log.txt",
+        `$`
+    )
+    console.log("hello from middleware 1");
+    next();
+});
 
 // Routes
 app.get("/users", (req, res) => {
@@ -43,7 +54,11 @@ app.post("/api/users", (req, res) => {
     return res.json({ status: "success",id:users.length });
     }); 
 });
+app.get("/home",(res,req)=>{
+    res.body("")
+})
 
 app.listen(PORT, () => {
     console.log(`Server Started at PORT ${PORT}`);
 });
+
